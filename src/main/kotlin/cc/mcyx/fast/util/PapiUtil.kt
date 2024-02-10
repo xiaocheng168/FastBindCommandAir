@@ -13,18 +13,13 @@ abstract class PapiUtil {
          */
         @JvmStatic
         fun papiFormat(string: String, player: Player): String {
-            //获取字符串里所有%xxx%变量打包成list
-            val list = string.split("%").filter { it.isNotEmpty() }.toMutableList()
-            //遍历list
-            for (i in list.indices) {
-                //获取变量名
-                val varName = list[i].substring(1, list[i].length - 1)
-                //获取变量值
-                val varValue = PlaceholderAPI.setPlaceholders(player, varName)
-                //替换变量
-                list[i] = varValue
+            var replaceOver = string
+            string.split("%").forEachIndexed { index, s ->
+                if (index % 2 == 1) {
+                    replaceOver = replaceOver.replace("%${s}%", PlaceholderAPI.setPlaceholders(player, "%${s}%"))
+                }
             }
-            return list.joinToString("")
+            return replaceOver
         }
     }
 }

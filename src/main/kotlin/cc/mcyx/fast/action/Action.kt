@@ -39,8 +39,10 @@ data class Action(
             }
             commands.forEach { command ->
                 val sender = command.split(" ")[0]
-                val rc = command.replace("$sender ", "")
-                println(PapiUtil.papiFormat(rc, player))
+                var rc: String = command.replace("$sender ", "").replace("%player_name%", player.name)
+                Bukkit.getPluginManager().getPlugin("PlaceholderAPI")?.also {
+                    rc = PapiUtil.papiFormat(rc, player)
+                }
                 when (sender) {
                     //玩家以OP权限执行
                     "op" -> {

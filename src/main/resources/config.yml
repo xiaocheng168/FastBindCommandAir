@@ -1,0 +1,11 @@
+binds:
+  demo:
+    #RIGHT（右键）、LEFT（左键）
+    action: RIGHT
+    #执行完是否消失
+    isOne: true
+    #执行的命令
+    commands:
+      - "player playerRun"
+      - "op say opRun"
+      - "server say server"

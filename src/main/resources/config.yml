@@ -4,7 +4,9 @@ actions:
     #RIGHT（右键）、LEFT（左键）、SHIFT_LEFT（蹲+左键）、SHIFT_RIGHT（蹲+右键）
     actionMode: RIGHT
     #执行完物品是否消失
-    isOne: true
+    isDie: true
+    #是否取消交互事件（取消之后玩家使用时交互的动作将不执行，列如右键门，那么门不会被打开！）
+    isCancelEvent: true
     #交互权限
     permission: "action.permission.demo"
     #没有权限执行（注意，留空表示不提示，可以伪造无反应）

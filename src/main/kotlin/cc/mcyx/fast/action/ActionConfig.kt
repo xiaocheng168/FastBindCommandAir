@@ -5,11 +5,12 @@ import cc.mcyx.fast.FastBindCommand
 object ActionConfig {
 
     //行为列表
-    val actionList = mutableListOf<Action>()
+    val actionList = hashMapOf<String, Action>()
+
     /**
      * 读入配置文件里的所有行为
      */
-    fun getActionListReload(): MutableList<Action> {
+    fun getActionListReload(): HashMap<String, Action> {
         return actionList.also { rt ->
             actionList.clear()
             val actionConfig = FastBindCommand.bindConfig.config.getConfigurationSection("actions")
@@ -23,8 +24,9 @@ object ActionConfig {
                         actionConfig.getString("${it}.no-permission-message", ""),
                         actionConfig.getStringList("${it}.commands"),
                         ActionMode.valueOf(actionConfig.getString("${it}.action", "RIGHT")),
+                        actionConfig.getBoolean("${it}.isCancelEvent", true),
                     ).apply {
-                        rt.add(this)
+                        rt[name] = (this)
                     }
                 }
             }

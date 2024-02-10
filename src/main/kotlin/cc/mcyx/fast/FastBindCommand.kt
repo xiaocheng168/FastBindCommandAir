@@ -23,6 +23,7 @@ class FastBindCommand : PaimonPlugin() {
 
     override fun onEnabled() {
         logger.info("物品绑定命令已启用")
+        logger.info("已加载 ${ActionConfig.actionList.size} 个交互行为")
         FastCommand(this).register()
     }
 }

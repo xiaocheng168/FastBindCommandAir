@@ -2,3 +2,5 @@ name: FastBindCommandAir
 main: cc.mcyx.fast.FastBindCommand
 version: "${project.version}"
 author: Zcc
+softdepend:
+  - PlaceholderAPI

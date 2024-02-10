@@ -10,5 +10,9 @@ class FastListener : PaimonAutoListener {
     )
     fun onEvent(player: PlayerInteractEvent) {
         val item = player.item
+        //交互的不是原物品
+        if (item.hasItemMeta()) {
+
+        }
     }
 }

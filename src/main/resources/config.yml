@@ -1,10 +1,15 @@
-binds:
+actions:
+  #测试方案
   demo:
-    #RIGHT（右键）、LEFT（左键）
-    action: RIGHT
-    #执行完是否消失
+    #RIGHT（右键）、LEFT（左键）、SHIFT_LEFT（蹲+左键）、SHIFT_RIGHT（蹲+右键）
+    actionMode: RIGHT
+    #执行完物品是否消失
     isOne: true
-    #执行的命令
+    #交互权限
+    permission: "action.permission.demo"
+    #没有权限执行（注意，留空表示不提示，可以伪造无反应）
+    no-permission-message: "&a你没有权限执行啊!"
+    #执行命令
     commands:
       - "player playerRun"
       - "op say opRun"

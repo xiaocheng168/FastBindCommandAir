@@ -15,4 +15,4 @@ actions:
     commands:
       - "player playerRun"
       - "op say opRun"
-      - "server say server"
+      - "console say server"

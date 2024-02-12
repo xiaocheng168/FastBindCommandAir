@@ -25,6 +25,8 @@ data class Action(
      * 执行此交互行为
      */
     fun runAction(player: Player, itemStack: ItemStack, event: PlayerInteractEvent) {
+        //如果不启用，那么不处理
+        if (!this.enable) return
         //是否取消事件
         event.isCancelled = isCancelEvent
         if (!player.hasPermission(permission)) {

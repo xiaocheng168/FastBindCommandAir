@@ -1,6 +1,8 @@
 actions:
   #测试方案
   demo:
+    #是否启用此Action，如果没有启用那么将不处理
+    enable: true
     #RIGHT（右键）、LEFT（左键）、SHIFT_LEFT（蹲+左键）、SHIFT_RIGHT（蹲+右键）
     actionMode: RIGHT
     #执行完物品是否消失

@@ -15,6 +15,6 @@ actions:
     no-permission-message: "&a你没有权限执行啊!"
     #执行命令
     commands:
-      - "player playerRun"
+      - "player say playerRun"
       - "op say opRun"
       - "console say server"
